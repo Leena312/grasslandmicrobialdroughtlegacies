@@ -29,3 +29,20 @@ Statistical analyses
 	Due to the differences in climatic conditions between 2018 and 2019, we analyzed each year separately. All statistical analyses were performed in R using the OUT table created. We used mctoolsr (https://github.com/leffj/mctoolsr/) to upload our meta data and OUT table. We first measured alpha and beta diversity to test for differences in diversity between the treatments. We rarefied data to 3,000 sequences per sample for both alpha and beta diversity using the single_rarefy function in mctoolrs. We measured alpha diversity by calculating richness (number of OTUs) and Shannon’s Diversity using the diversity function from the vegan package. We then created generalized linear models with drought treatment as a fixed factor to measure significance between treatments for each alpha diversity measurement. We ran one-way ANOVAs and post-hoc Tukey tests using the emmeans package to test for significance between treatments. We then ran Permanovas in the vegan package to test for significant differences between the treatments and used pairwise Permanovas to test for significance between treatments using the package pairwiseadonis. We then measured beta diversity using Canonical Analysis of Principal Coordinates (CAP) using the CAPdiscrim function in the BiodiversityR package using treatment as a fixed factor. 
 	To determine if there were differences from the OUT level to the phylum level in bacteria and fungi, we used fixed-effect negative binomial generalized linear models (GLM) from the MASS package in R. First, we transformed the data to relative abundance by dividing count per sample by the total per sample. We then normalized the data using TMM normalization and used the summarize_taxonomy function in mctoolsr to measure differences across the treatments for different taxonomic levels. We used the emmeans package to estimate abundance and standard error of each OTU. Emmeans calculates ln(counts), thus we back-transformed to counts. We were then able to run one-way ANOVAS across treatments depending on the taxonomic level and performed FDR adjustments. We extracted Tukey adjusted post-hoc comparisons across the treatments for phylum, order, class, and family  easur and looked for differences within these groups using the emmeans package. 
 
+
+Data files: OTU_table_16S.txt, OTU_table_ITS.txt, Meta_data_16S.txt, Meta_data_ITS.txt, qpcr.csv
+
+OTU_table_16S.txt:
+This file has the OTU table for bacteria (16S sequences) with phylogeny.
+
+OTU_table_ITS.txt:
+This file has the OTU table for bacteria (ITS sequences) with phylogeny.
+
+Meta_data_16S.txt:
+This file has the accompanying meta data for each sample for the bacteria (16S sequences)
+
+Meta_data_ITS.txt:
+This file has the accompanying meta data for each sample for the bacteria (16S sequences)
+
+qpcr.csv:
+This file contains the qPCR 

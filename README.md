@@ -78,7 +78,9 @@ Sample Location - Kansas
 Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
 
 MappingFile_ITS_2018.xlsx:
+
 This file has the accompanying meta data for each sample for the fungi (ITS sequences) in 2018.
+
 File aspect:
 SampleID - The sample that matches the OTU table
 Locus - 16S or ITS
@@ -87,7 +89,9 @@ Sample Location - Kansas
 Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
 
 MappingFile_ITS_2019.xlsx:
+
 This file has the accompanying meta data for each sample for the fungi (ITS sequences) in 2019.
+
 File aspect:
 SampleID - The sample that matches the OTU table
 Locus - 16S or ITS
@@ -96,7 +100,9 @@ Sample Location - Kansas
 Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
 
 qpcr.csv:
+
 This file contains the qPCR data for bacteria and fungi. 
+
 File columns:
 Sample - Which sample does this belong to. Samples are from 1-30.
 Block - Which block the sample belongs to. There were 10 blocks and three samples per block.
@@ -106,4 +112,5 @@ Fungi - Copy number of Fungi in the sample
 Total - Copy number of bacteria and fungi.
 
 EDGEmicrobiomedateexploration.R:
+
 This file has all the data analyses run. Email for any questions.

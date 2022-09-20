@@ -30,19 +30,80 @@ Statistical analyses
 	To determine if there were differences from the OUT level to the phylum level in bacteria and fungi, we used fixed-effect negative binomial generalized linear models (GLM) from the MASS package in R. First, we transformed the data to relative abundance by dividing count per sample by the total per sample. We then normalized the data using TMM normalization and used the summarize_taxonomy function in mctoolsr to measure differences across the treatments for different taxonomic levels. We used the emmeans package to estimate abundance and standard error of each OTU. Emmeans calculates ln(counts), thus we back-transformed to counts. We were then able to run one-way ANOVAS across treatments depending on the taxonomic level and performed FDR adjustments. We extracted Tukey adjusted post-hoc comparisons across the treatments for phylum, order, class, and family  easur and looked for differences within these groups using the emmeans package. 
 
 
-Data files: OTU_table_16S.txt, OTU_table_ITS.txt, Meta_data_16S.txt, Meta_data_ITS.txt, qpcr.csv
+Data files: OTU_16S_withtax_2018.xlsx, OTU_16S_withtax_2019.xlsx,OTU_ITS_withtax_2018.xlsx,OTU_ITS_withtax_2019.xlsx, MappingFile_16S_2018.xlsx,MappingFile_16S_2019.xlsx, MappingFile_ITS_2018.xlsx, MappingFile_ITS_2019.xlsx,qpcr.csv, EDGEmicrobiomedateexploration.R
 
-OTU_table_16S.txt:
-This file has the OTU table for bacteria (16S sequences) with phylogeny.
+OTU_16S_withtax_2018.xlsx:
+This file has the OTU table for bacteria (16S sequences) with phylogeny in 2018.
+File aspects:
+#OTU ID - The OTU that is associated with the count
+Leena1_16S to Leena 30_16S - Sample is the header and numbers in the column are the counts of each OTU in that sample
+taxonomy - phlogeny for each OTU
 
-OTU_table_ITS.txt:
-This file has the OTU table for bacteria (ITS sequences) with phylogeny.
+OTU_16S_withtax_2019.xlsx:
+This file has the OTU table for bacteria (16S sequences) with phylogeny in 2019.
+File aspects:
+#OTU ID - The OTU that is associated with the count
+Leena1_16S to Leena 30_16S - Sample is the header and numbers in the column are the counts of each OTU in that sample
+taxonomy - phlogeny for each OTU
 
-Meta_data_16S.txt:
-This file has the accompanying meta data for each sample for the bacteria (16S sequences)
+OTU_ITS_withtax_2018.xlsx:
+This file has the OTU table for fungi (ITS sequences) with phylogeny in 2018.
+File aspects:
+#OTU ID - The OTU that is associated with the count
+Leena1_ITS to Leena 30_ITS - Sample is the header and numbers in the column are the counts of each OTU in that sample
+taxonomy - phlogeny for each OTU
 
-Meta_data_ITS.txt:
-This file has the accompanying meta data for each sample for the bacteria (16S sequences)
+OTU_ITS_withtax_2019.xlsx:
+This file has the OTU table for fungi (ITS sequences) with phylogeny in 2019.
+#OTU ID - The OTU that is associated with the count
+Leena1_ITS to Leena 30_ITS - Sample is the header and numbers in the column are the counts of each OTU in that sample
+taxonomy - phlogeny for each OTU
+
+MappingFile_16S_2018.xlsx:
+This file has the accompanying meta data for each sample for the bacteria (16S sequences) in 2018.
+File aspect:
+SampleID - The sample that matches the OTU table
+Locus - 16S or ITS
+Sample Type - PT1 = envrironmental
+Sample Location - Kansas
+Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
+
+MappingFile_16S_2019.xlsx:
+This file has the accompanying meta data for each sample for the bacteria (16S sequences) in 2019.
+File aspect:
+SampleID - The sample that matches the OTU table
+Locus - 16S or ITS
+Sample Type - PT1 = envrironmental
+Sample Location - Kansas
+Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
+
+MappingFile_ITS_2018.xlsx:
+This file has the accompanying meta data for each sample for the fungi (ITS sequences) in 2018.
+File aspect:
+SampleID - The sample that matches the OTU table
+Locus - 16S or ITS
+Sample Type - PT1 = envrironmental
+Sample Location - Kansas
+Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
+
+MappingFile_ITS_2019.xlsx:
+This file has the accompanying meta data for each sample for the fungi (ITS sequences) in 2019.
+File aspect:
+SampleID - The sample that matches the OTU table
+Locus - 16S or ITS
+Sample Type - PT1 = envrironmental
+Sample Location - Kansas
+Treatment - INT = intense, CHR = chronic, or CON = control. See methods for descriptions of the treatments
 
 qpcr.csv:
-This file contains the qPCR 
+This file contains the qPCR data for bacteria and fungi. 
+File columns:
+Sample - Which sample does this belong to. Samples are from 1-30.
+Block - Which block the sample belongs to. There were 10 blocks and three samples per block.
+Treatment - Which treatment the sample belongs to. INT is intense, CHR is chronic, and CON is control. See methods for what these means.
+Bacteria - Copy number of bacteria in the sample
+Fungi - Copy number of Fungi in the sample
+Total - Copy number of bacteria and fungi.
+
+EDGEmicrobiomedateexploration.R:
+This file has all the data analyses run. Email for any questions.
